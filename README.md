@@ -1,7 +1,7 @@
-# Module 03 Demonstration
+# Module 03
  
 ## Description
-Introduction to Loops and Logic
+Module 03 Assignment Loops & Logic
  
 ## Author
-{Student Name}
+Presley McFarlane-Goolcharan

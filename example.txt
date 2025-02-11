@@ -1,6 +1,0 @@
-penny
-nickel
-dime
-quarter
-loonie
-toonie

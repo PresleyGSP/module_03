@@ -29,7 +29,7 @@ while (trigger_menu):
         print(f"{key}: {value}".center(width))
     print(header_footer)
     selection = input(f"Enter your selection: ")
-# Deposit, Withdraw, Quit Loop
+# Deposit
     if selection in ['d', 'D']:
         amount = float(input(f"Enter the transaction amount: "))
         current_balance = initial_balance + amount
@@ -39,9 +39,11 @@ while (trigger_menu):
         print(header_footer)
         time.sleep(3)
         os.system('cls' if os.name == 'nt' else 'clear')
+# Withdraw
     elif selection in ['w', 'W']:
         amount = float(input(f"Enter the transaction amount: "))
         current_balance = initial_balance - amount
+# Insufficient Funds
         if amount >= current_balance:
             print()
             print(header_footer)
@@ -49,6 +51,7 @@ while (trigger_menu):
             print(header_footer)
             time.sleep(3)
             os.system('cls' if os.name == 'nt' else 'clear')
+# Sufficient Funds
         elif amount < current_balance:
             print()
             print(header_footer)
@@ -56,8 +59,10 @@ while (trigger_menu):
             print(header_footer)
             time.sleep(3)
             os.system('cls' if os.name == 'nt' else 'clear')
+# Quit
     elif selection in ['q', 'Q']:
-        break
+        trigger_menu = False
+# Invalid Selection
     else:
         print()
         print(header_footer)

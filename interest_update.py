@@ -24,3 +24,9 @@ for key, value in data.items():
     data[key] = new_value
 for key, value in data.items():
     pprint(f"{key}: {value:.6f}")
+
+with open("updated_balances_PMG.csv", "a") as file:
+     file.write(f"Account,Balance")
+     for key, value in data.items():
+        file.write(f"\n{key},{value:.2f}")
+    

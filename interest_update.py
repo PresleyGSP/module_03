@@ -1,6 +1,6 @@
 # Import Module
 from pprint import pprint
-from csv import DictReader
+import csv
 
 # File I/0
 data = {}
@@ -29,4 +29,8 @@ with open("updated_balances_PMG.csv", "a") as file:
      file.write(f"Account,Balance")
      for key, value in data.items():
         file.write(f"\n{key},{value:.2f}")
+with open('updated_balances_PMG.csv', 'r') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row['Account'], row['Balance'])
     

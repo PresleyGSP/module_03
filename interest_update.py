@@ -10,6 +10,7 @@ with open("account_balances.txt", "r") as input_file:
         key, value = line.strip().split('|')
         data[key] = float(value)
     pprint(data)
+# Interest Calculations
 for key, value in data.items():
     if value < 0:
         interest_rate = 0.1
@@ -24,11 +25,12 @@ for key, value in data.items():
     data[key] = new_value
 for key, value in data.items():
     pprint(f"{key}: {value:.6f}")
-
+# Create Updated Balances File
 with open("updated_balances_PMG.csv", "a") as file:
      file.write(f"Account,Balance")
      for key, value in data.items():
         file.write(f"\n{key},{value:.2f}")
+# Read File to Console
 with open('updated_balances_PMG.csv', 'r') as file:
     reader = csv.DictReader(file)
     for row in reader:
